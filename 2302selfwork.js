@@ -49,8 +49,12 @@ console.log(`Esempio 2`);
 
 let input2 = prompt(`Inserisci un numero`);
 
-for (let i = 1; i <= 10; i++) {
-    console.log(input2 * i);
+if (typeof input2 === `string`) {
+    console.log(`Non hai inserito un numero.`);
+} else {
+    for (let i = 1; i <= 10; i++) {
+        console.log(input2 * i);
+    }
 }
 
 //     3 - Scrivere un programma che stampi i numeri da 1 a 100 andando a capo ogni 10.
@@ -79,6 +83,8 @@ for (let i = 1; i <= 100; i += 10) {
         }, ${i + 8}, ${i + 9}\n`
     );
 }
+
+// Anche se, \n non server perché ogni esecuzione di console.log() stampa automaticamente accapo.
 
 //   4 - Scrivere un programma che stampi i numeri da 1 a 100 con una variazione. Al posto di ogni numero multiplo di 3 dovra' stampare la stringa 'Fizz', ad ogni multiplo di 5 la stringa 'Buzz' e ad ogni multiplo di 15 la stringa 'FizzBuzz'
 
