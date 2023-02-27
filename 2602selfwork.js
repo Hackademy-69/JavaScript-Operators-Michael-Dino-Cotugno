@@ -2,7 +2,7 @@
 
 //crea un numero casuale tra 5-10 per i lnumero di tiri di dado
 console.log(`Esempio 1`);
-let n = 10; // number of rolls
+let n = 6; // number of rolls
 let player1 = 0; // player 1
 let player2 = 0; // player 2
 
@@ -17,7 +17,7 @@ for (let i = 1; i <= n; i++) {
     player1 += p1roll;
     player2 += p2roll;
     console.log(
-        `Il giocatore 1 ha tirato un ${p1roll}!\nIl giocatore 2 ha tirato un ${p2roll}`
+        `Il giocatore 1 ha tirato un ${p1roll}!\nIl giocatore 2 ha tirato un ${p2roll}!`
     );
 
     if (i == 1) {
@@ -70,10 +70,11 @@ if (player1 > player2) {
 // 2 - Scrivere un programma che dato un numero N, se il numero e' pari lo divida per due, se e' dispari lo moltiplichi * 3 e sommi 1. Ripetere questa operazione finche' il risultato finale non sia 1
 
 console.log(`\n\nEsempio 2`);
-let numbern = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+let numbern = Math.floor(Math.random() * (1000 - 1 + 1) + 1);
 console.log(numbern);
 
-for (let i = 1; numbern != 1; i++) {
+// for (let i = 1; numbern != 1; i++) {
+while (numbern != 1) {
     if (numbern % 2 == 0) {
         numbern = numbern / 2;
     } else {
