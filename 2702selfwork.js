@@ -68,7 +68,7 @@ function matriceMin(arr) {
 function matriceMax(arr) {
     return arr.pop(arr.sort((a, b) => a - b));
 }
-let matrice2 = [-9, 7, 28, -29, 38, 7.9, -97.3];
+let matrice2 = [-9, 7, 28, -29, 38, 7.9, -97.3, 39];
 console.log(matrice2);
 console.log(`Minore: ${matriceMin(matrice2)}`);
 console.log(`Maggiore: ${matriceMax(matrice2)}`);
