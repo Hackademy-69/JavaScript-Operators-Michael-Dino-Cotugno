@@ -110,13 +110,27 @@ console.log(`Es.9`);
 let: gameRoom = {
     players: [],
 
-    addPlayers: function (playerName, playerScore) {
-        this.players.push({ name: playerName, score: playerScore });
+    addPlayers: function (playerName) {
+        this.players.push({ name: playerName, rolls: [] });
     },
 
-    setScore: function () {},
+    setRolls: function (rollNum) {
+        this.players.forEach((player) => {
+            for (let i = 0; i < rollNum; i++) {
+                player.rolls.push(Math.floor(Math.random() * (6 - 1 + 1) + 1));
+            }
+        });
+    },
+
+    getScore: function () {
+        this.players.forEach((player) => {
+            player.score = player.rolls.reduce((acc, n) => acc + n);
+        });
+    },
 
     whoWon: function () {
+        this.setRolls(10);
+        this.getScore();
         this.players.sort((a, b) => b.score - a.score);
         let winner = this.players[0];
         console.log(
@@ -125,10 +139,11 @@ let: gameRoom = {
     },
 };
 
-gameRoom.addPlayers(`Michael`, 38);
-gameRoom.addPlayers(`Alin`, 33);
-gameRoom.addPlayers(`Elison`, 48);
-gameRoom.addPlayers(`Badr`, 31);
-gameRoom.addPlayers(`Giancarlo`, 32);
+gameRoom.addPlayers(`Michael`);
+gameRoom.addPlayers(`Alin`);
+gameRoom.addPlayers(`Elison`);
+gameRoom.addPlayers(`Badr`);
+gameRoom.addPlayers(`Giancarlo`);
 gameRoom.whoWon();
+console.log(gameRoom.players);
 console.log(gameRoom);

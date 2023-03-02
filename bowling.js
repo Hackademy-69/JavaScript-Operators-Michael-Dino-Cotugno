@@ -3,19 +3,13 @@
 let bowling = {
     players: [],
 
-    setFinalScore: function () {
-        this.players.forEach((giocatore) => {
-            giocatore.finalScore = giocatore.scores.reduce((acc, n) => acc + n);
-        });
-    },
-
     addPlayer: function (nome, cognome) {
         this.players.push({ name: nome, surname: cognome, scores: [] });
     },
 
     setScores: function () {
         this.players.forEach((giocatore) => {
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= nTiri; i++) {
                 giocatore.scores.push(
                     Math.floor(Math.random() * (10 - 0 + 1) + 0)
                 );
@@ -23,8 +17,14 @@ let bowling = {
         });
     },
 
+    setFinalScore: function () {
+        this.players.forEach((giocatore) => {
+            giocatore.finalScore = giocatore.scores.reduce((acc, n) => acc + n);
+        });
+    },
+
     setWinner: function () {
-        this.setScores();
+        this.setScores(5);
         this.setFinalScore();
         this.players.sort((a, b) => b.finalScore - a.finalScore);
         let winner = this.players[0];
