@@ -166,3 +166,14 @@ btnDisappear.addEventListener("click", () => {
 // Esercizio che si vabbe' Matteo ma tu ci vuoi male (usate quello che sapete dei colori in CSS):
 // - Realizzare un div in HTML, dargli un'altezza di 300px, una width di 300px e un bordo 2px solid black in css. Sotto il div realizzare un button. Intervenendo con JS fare in modo che al click sul bottone il background del div cambi con un colore casuale
 console.log("Esercizio che si vabbe' Matteo ma tu ci vuoi male");
+
+let toFill = document.querySelector(".toFill");
+let btnBackFill = document.querySelector(".btnBackFill");
+
+btnBackFill.addEventListener("click", () => {
+    toFill.style.backgroundColor = `rgb(${Math.floor(
+        Math.random() * (255 - 0) + 0
+    )},${Math.floor(Math.random() * (255 - 0) + 0)},${Math.floor(
+        Math.random() * (255 - 0) + 0
+    )})`;
+});
