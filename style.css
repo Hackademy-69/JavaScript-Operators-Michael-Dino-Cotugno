@@ -1,0 +1,11 @@
+.pTextColor {
+    color: brown;
+}
+
+.pBold {
+    font-weight: bold;
+}
+
+.pDisappear {
+    opacity: 0;
+}

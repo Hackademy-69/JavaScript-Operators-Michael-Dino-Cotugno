@@ -130,17 +130,38 @@ JSchng.addEventListener("click", () => {
 
 // - Dato un array di nomi, fare in modo di creare una ul contenente un li PER OGNI nome che mi permetta di visualizzarli da browser
 console.log("Esercizi Manipolazione del DOM 2");
+
 let names = ["Michael", "Nicola", "Laetitia", "Annalisa"];
-let nameslist = document.querySelector("nameslist");
-function viewnames(arr) {
-    create;
-    arr.forEach((el) => {
-        nameslist.innerHTML = "<ul><li>";
-    });
-}
+let nameslist = document.querySelector(".nameslist");
+
+names.forEach((name) => {
+    let listItem = document.createElement("li");
+    listItem.innerHTML = name;
+    nameslist.appendChild(listItem);
+});
 
 // - Realizzare 3 paragrafi e 3 bottoni in HTML. Intervenendo con JS fare in modo che cliccando sul primo bottone cambino i colori di tutti i paragrafi e tornino come prima, al click sul secondo bottone i paragrafi dovranno essere in grassetto e tornare normali e l'ultimo bottone dovra' far scomparire e riapparire i paragrafi
 console.log("Esercizi Manipolazione del DOM 3");
+let pToModify = document.querySelectorAll(".pToModify");
+let btnTextColor = document.querySelector(".btnTextColor");
+let btnBold = document.querySelector(".btnBold");
+let btnDisappear = document.querySelector(".btnDisappear");
+
+btnTextColor.addEventListener("click", () => {
+    pToModify.forEach((parag) => {
+        parag.classList.toggle("pTextColor");
+    });
+});
+btnBold.addEventListener("click", () => {
+    pToModify.forEach((parag) => {
+        parag.classList.toggle("pBold");
+    });
+});
+btnDisappear.addEventListener("click", () => {
+    pToModify.forEach((parag) => {
+        parag.classList.toggle("pDisappear");
+    });
+});
 
 // Esercizio che si vabbe' Matteo ma tu ci vuoi male (usate quello che sapete dei colori in CSS):
 // - Realizzare un div in HTML, dargli un'altezza di 300px, una width di 300px e un bordo 2px solid black in css. Sotto il div realizzare un button. Intervenendo con JS fare in modo che al click sul bottone il background del div cambi con un colore casuale
